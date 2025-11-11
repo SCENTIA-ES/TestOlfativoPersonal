@@ -3,27 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SCENTIA AI · Atelier Privée</title>
+<title>SCENTIA IA · Tu Perfume Unico</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ------------------------------------- */
 /* 1. CSS VARIABLES & BASE STYLES */
-/* --- BLACK LABEL LUXURY PALETTE --- */
+/* --- STRICT PALETTE IMPLEMENTATION --- */
 :root {
-  --color-primary-dark: #0f0f0f; /* Near Black */
-  --color-secondary-dark: #1a1a1a; /* Card/Bubble Background */
-  --color-accent-gold: #d4ac57; /* Rich, slightly deeper gold */
-  --color-text-light: #f5f5f5; /* Pristine White Text */
-  --color-text-subtle: #aaaaaa; /* Subtle Secondary Text */
-  --bg-body: #000000; /* True Black Body */
+  /* Principal: Midnight Blue */
+  --color-primary-dark: #1A1F3B; 
+  --color-secondary-dark: #252B4E; /* Slightly lighter shade for contrast elements */
+  
+  /* Accent: Soft Sage/Mint */
+  --color-accent: #A8C3A1; 
+  
+  /* Secondary/Subtle: Silver/Pearl Gray */
+  --color-text-light: #f0f0f0; 
+  --color-text-subtle: #C0C0C0; 
+  
+  /* Background: Very Dark Blue/Black for depth */
+  --bg-body: #0a0e1b; 
+  
+  /* Bubble definitions */
   --bubble-bot: var(--color-secondary-dark); 
-  --bubble-user: #2d2d2d; 
-  --cta-bg: #d4ac57; /* New CTA background color */
-  --cta-text: #0f0f0f; /* New CTA text color */
+  --bubble-user: #353B62; /* Darker blue for user input/bubble for clear distinction */
+  
+  /* CTA definitions */
+  --cta-bg: var(--color-accent); 
+  --cta-text: var(--color-primary-dark); 
 }
 
 body {
-  font-family: 'Exo 2', sans-serif; /* Modern, clean font */
+  font-family: 'Exo 2', sans-serif; 
   margin: 0; padding: 0;
   background-color: var(--bg-body);
   display: flex; justify-content: center; align-items: center;
@@ -38,7 +49,7 @@ body {
 /* ------------------------------------- */
 .chat-container {
   width: 95%; max-width: 950px;
-  background: var(--color-primary-dark);
+  background: var(--color-primary-dark); /* Midnight Blue */
   border-radius: 15px;
   display: flex; flex-direction: column;
   height: 95vh;
@@ -47,16 +58,16 @@ body {
   border: 1px solid #333;
 }
 .chat-header {
-  background: #000000;
+  background: var(--bg-body); 
   padding: 30px 40px 20px;
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 34px; 
   font-weight: 700;
-  color: var(--color-accent-gold); 
+  color: var(--color-accent); /* Soft Mint/Sage */
   letter-spacing: 5px; 
   text-transform: uppercase;
-  border-bottom: 4px double var(--color-accent-gold);
+  border-bottom: 4px double var(--color-text-subtle); /* Silver/Pearl Gray */
 }
 .chat-header span {
     display: block;
@@ -93,7 +104,7 @@ body {
 
 .bot { 
     background: var(--bubble-bot); 
-    border-color: #2a2a2a;
+    border-color: #3f476e; 
     border-radius: 20px 20px 20px 6px; 
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
@@ -103,22 +114,22 @@ body {
     margin-left: auto;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
-.bot strong { color: var(--color-accent-gold); font-weight: 600; } 
+.bot strong { color: var(--color-accent); font-weight: 600; } /* Mint accent on strong text */ 
 
 .terms-message {
-    border-left: 5px solid var(--color-accent-gold);
-    background: #111;
+    border-left: 5px solid var(--color-accent); /* Mint accent line */
+    background: var(--color-secondary-dark); 
     font-weight: 300;
     animation: pulse-border 1.5s infinite alternate;
 }
 @keyframes pulse-border {
-    from { border-color: var(--color-accent-gold); }
-    to { border-color: rgba(212, 172, 87, 0.5); }
+    from { border-color: var(--color-accent); }
+    to { border-color: rgba(168, 195, 161, 0.5); } 
 }
 .revelation-message {
-    background: var(--color-accent-gold); 
-    color: var(--color-primary-dark); 
-    box-shadow: 0 0 50px rgba(212, 172, 87, 0.8); 
+    background: var(--color-accent); /* Mint background */
+    color: var(--color-primary-dark); /* Midnight Blue text */
+    box-shadow: 0 0 50px rgba(168, 195, 161, 0.8); 
     font-size: 26px; 
     padding: 35px 45px;
     letter-spacing: 3px;
@@ -130,7 +141,7 @@ body {
   display: flex;
   padding: 25px 40px;
   background: var(--color-primary-dark);
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--bubble-user); 
 }
 .chat-input input, .chat-input select {
   padding: 16px 22px;
@@ -151,14 +162,14 @@ body {
     align-items: center;
 }
 .phone-input-group select {
-    flex: none; /* Do not stretch the select box */
-    width: 130px; /* fixed width for country code */
+    flex: none; 
+    width: 130px; 
     border-radius: 35px;
     background-color: var(--bubble-user);
     color: var(--color-text-light);
     border: 1px solid var(--bubble-user);
-    appearance: none; /* Remove default arrow */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23d4ac57"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
+    appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23A8C3A1"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 1em;
@@ -166,7 +177,7 @@ body {
 }
 .phone-input-group input {
     flex: 1;
-    border-left: none; /* visually combine */
+    border-left: none; 
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     padding-left: 10px;
@@ -174,41 +185,52 @@ body {
 }
 .chat-input button {
   margin-left: 15px;
-  background: var(--color-accent-gold);
-  border: 2px solid var(--color-accent-gold); 
-  color: var(--color-primary-dark);
+  background: var(--color-accent); /* Mint */
+  border: 2px solid var(--color-accent); 
+  color: var(--color-primary-dark); /* Midnight Blue text */
   font-weight: 600;
   padding: 16px 35px;
   border-radius: 35px;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(212, 172, 87, 0.5);
+  box-shadow: 0 6px 15px rgba(168, 195, 161, 0.5); 
   letter-spacing: 1px;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.chat-input button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* 5. PRODUCT CARD STYLES */
 .fragrance-card {
   background: var(--color-secondary-dark); 
-  border: 3px solid var(--color-accent-gold);
+  border: 3px solid var(--color-accent); /* Mint border */
   padding: 40px; 
   border-radius: 18px;
-  box-shadow: 0 0 40px rgba(212, 172, 87, 0.3);
+  box-shadow: 0 0 40px rgba(168, 195, 161, 0.3); 
 }
-.fragrance-card h3 { font-family: 'Playfair Display', serif; font-size: 32px; letter-spacing: 1px;} /* Added for clarity */
+.fragrance-card h3 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 32px; 
+    letter-spacing: 1px;
+    color: var(--color-accent); /* Mint */
+} 
 
 .story-box {
     background: var(--color-primary-dark);
     padding: 30px;
     border-radius: 12px;
     margin: 30px 0 15px;
-    border: 1px solid var(--color-accent-gold);
+    border: 1px solid var(--color-text-subtle); /* Silver line */
     font-style: italic;
     font-size: 16px;
-    box-shadow: 0 0 15px rgba(212, 172, 87, 0.15); /* Subtle inner glow */
+    box-shadow: 0 0 15px rgba(168, 195, 161, 0.15); 
 }
 .story-box h4 {
     font-family: 'Playfair Display', serif;
-    color: var(--color-accent-gold);
+    color: var(--color-accent); /* Mint */
     font-size: 22px;
     border-bottom: 2px solid var(--color-text-subtle);
     padding-bottom: 8px;
@@ -217,17 +239,17 @@ body {
     letter-spacing: 2px;
 }
 
-/* REPLACING .note-details with .olfactive-pyramid */
+/* OLFACTIVE PYRAMID */
 .olfactive-pyramid {
     margin: 40px 0;
     text-align: center;
     position: relative;
     padding-top: 20px;
-    border-top: 1px solid var(--color-text-subtle);
+    border-top: 1px solid var(--color-text-subtle); /* Silver Line */
 }
 .olfactive-pyramid h4 {
     font-family: 'Playfair Display', serif;
-    color: var(--color-accent-gold);
+    color: var(--color-accent); /* Mint */
     font-size: 24px;
     margin-bottom: 30px;
 }
@@ -244,7 +266,7 @@ body {
 
 .layer-title {
     font-family: 'Playfair Display', serif;
-    color: var(--color-accent-gold);
+    color: var(--color-accent); /* Mint */
     font-size: 18px;
     margin-bottom: 5px;
     font-weight: 600;
@@ -259,53 +281,76 @@ body {
     line-height: 1.5;
 }
 
-
-/* Flask and Swatches (Keep previous logic) */
+/* Flask and Swatches Styling */
 #flask-preview-container {
     padding: 30px 20px;
     border-radius: 12px;
-    border: 2px dashed var(--color-accent-gold);
+    border: 2px dashed var(--color-text-subtle); /* Silver dashed border for preview */
     text-align: center;
 }
-#flask-preview-container img {
+#flask-image {
     max-width: 180px;
+    border: 4px solid var(--color-accent) !important; /* Mint border for the flask image in the selection */
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
-.color-swatches { display: flex; gap: 15px; margin-top: 15px; justify-content: center; }
+.color-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
 .color-swatch {
-    width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--color-primary-dark);
-    cursor: pointer; transition: transform 0.2s, border-color 0.3s; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+.color-swatch:hover {
+    border-color: var(--color-accent);
 }
 .color-swatch.selected { 
-    border-color: var(--color-accent-gold);
-    box-shadow: 0 0 0 2px var(--color-primary-dark), 0 0 0 4px var(--color-accent-gold); 
+    border-color: var(--color-accent); 
+    box-shadow: 0 0 0 2px var(--color-primary-dark), 0 0 0 4px var(--color-accent); 
 }
 
-/* Typing Indicator (Keep previous logic) */
-.typing-indicator {
-    display: none; align-items: center; max-width: 85%; padding: 18px 22px; margin: 14px 0;
-    border-radius: 20px 20px 20px 6px; background: var(--bubble-bot);
+/* Individual Color Mapping (For visual representation) */
+.color-swatch[title="Perla Mate"] { background-color: #f0f0f0; }
+.color-swatch[title="Oro Rosado"] { background-color: #B76E79; }
+.color-swatch[title="Negro Ónix"] { background-color: #111111; }
+.color-swatch[title="Oro Brillante"] { background-color: #D4AF37; }
+.color-swatch[title="Esmeralda Oscura"] { background-color: #004d40; }
+.color-swatch[title="Rubí Profundo"] { background-color: #8b0000; }
+.color-swatch[title="Topacio Ahumado"] { background-color: #4a3d3c; }
+
+
+/* Typing Indicator (Mint Dots) */
+.typing-indicator span {
+    background-color: var(--color-accent); 
 }
 
-/* --- CTA BAR STYLING (NEW) --- */
+/* --- CTA BAR STYLING --- */
 .purchase-cta-bar {
-    background: var(--cta-bg);
-    color: var(--cta-text);
+    background: var(--cta-bg); 
+    color: var(--cta-text); 
     box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.5);
     font-weight: 700;
     font-size: 20px;
     letter-spacing: 2px;
     padding: 20px 35px;
-    margin: 30px -40px -40px; /* Overlap with padding for full width */
-    width: calc(100% + 80px); /* Full width including padding */
+    margin: 30px -40px -40px; 
+    width: calc(100% + 80px); 
     border: none;
-    border-radius: 0 0 15px 15px; /* Match container border radius */
+    border-radius: 0 0 15px 15px; 
     cursor: pointer;
     text-transform: uppercase;
     transition: background 0.3s, transform 0.3s, opacity 0.3s;
     text-align: center;
 }
 .purchase-cta-bar:hover { 
-    background: #bb944c; 
+    background: #90ab8a; 
     transform: translateY(-2px);
     opacity: 0.95;
 }
@@ -327,7 +372,7 @@ body {
 </div>
 
 <script>
-// --- GLOBAL DATA & CONSTANTS ---
+// --- GLOBAL DATA & CONSTANTS (Remains unchanged) ---
 const flaskImages = {
     'Perla Mate': 'https://i.postimg.cc/Jz91dfR6/Gemini-Generated-Image-f2t76hf2t76hf2t7.png', 
     'Oro Rosado': 'https://i.postimg.cc/7ZpxQFqB/Gemini-Generated-Image-61s8gg61s8gg61s8.png', 
@@ -410,6 +455,8 @@ async function botAskNext(){
     if (currentQuestion === 3) { 
         createPhoneInput();
     } else if (currentQuestion === 9) {
+        // For Step 9, we disable the button until a color is selected
+        sendBtn.disabled = true;
         createFlaskColorInput();
     } else {
         createStandardInput();
@@ -426,6 +473,7 @@ async function botAskNext(){
 
         addMessage(questionText,"bot", currentQuestion === 0 ? "terms-message" : "");
     } else {
+        // End of questions, generate result
         setTimeout(generatePerfumeDemo, 500);
     }
 }
@@ -434,11 +482,17 @@ async function botAskNext(){
 
 function createStandardInput() {
     currentInputContainer.innerHTML = `<input id="user-input" type="text" placeholder="Escribe tu respuesta y presiona Enter o Enviar...">`;
+    // Ensure the input group class is reset for standard input
+    currentInputContainer.className = 'phone-input-group'; 
+    sendBtn.textContent = "Enviar";
+    sendBtn.disabled = false;
+    
     // Re-bind the enter key and focus
     const userInput = document.getElementById("user-input");
-    userInput.addEventListener("keypress", handleEnterKey);
-    userInput.focus();
-    currentInputContainer.className = ''; 
+    if(userInput) {
+        userInput.addEventListener("keypress", handleEnterKey);
+        userInput.focus();
+    }
 }
 
 function createPhoneInput() {
@@ -450,24 +504,28 @@ function createPhoneInput() {
     `;
     currentInputContainer.innerHTML = phoneInputHTML;
     currentInputContainer.className = 'phone-input-group';
+    sendBtn.textContent = "Enviar";
+    sendBtn.disabled = false;
     
     const userInput = document.getElementById("user-input");
-    userInput.addEventListener("keypress", handleEnterKey);
-    userInput.focus();
+    if(userInput) {
+        userInput.addEventListener("keypress", handleEnterKey);
+        userInput.focus();
+    }
 }
 
 function createFlaskColorInput() {
-    // Hide standard input fields
+    // Hide standard input field for the Flask selection step
     currentInputContainer.innerHTML = '';
     currentInputContainer.className = 'color-selection-display'; 
-    sendBtn.disabled = true; // Disable until a color is selected
-
-    // Show the selection interface within the chat window (not input area)
+    sendBtn.textContent = "Selecciona un Color"; // Initial disabled text
+    
+    // Create the message bubble containing the selection interface
     addMessage(`
         <div class="color-selection" style="text-align: center;">
-            <p style="color: var(--color-accent-gold); margin-bottom: 20px;">Selecciona el cristal de tu frasco:</p>
+            <p style="color: var(--color-accent); margin-bottom: 20px;">Selecciona el cristal de tu frasco:</p>
             <div id="flask-preview-container" style="border: none; padding: 0;">
-                <img id="flask-image" src="${flaskImages[selectedFlaskColor]}" alt="Frasco de Perfume Personalizado" style="max-width: 150px; margin-bottom: 20px; border: 2px solid var(--color-accent-gold); border-radius: 8px;">
+                <img id="flask-image" src="${flaskImages[selectedFlaskColor]}" alt="Frasco de Perfume Personalizado" style="max-width: 150px; margin-bottom: 20px; border: 2px solid var(--color-accent); border-radius: 8px;">
             </div>
             <div class="color-swatches">
                 <div class="color-swatch selected" title="Perla Mate" onclick="window.selectColor(this)"></div>
@@ -481,8 +539,11 @@ function createFlaskColorInput() {
         </div>
     `, 'bot', 'flask-selection-message');
     
-    // Now that the selection is visible, we wait for the user to click a color.
-    // The continue action is handled by the selectColor function which enables the button.
+    // Ensure the default color is selected visually
+    const defaultSwatch = chatWindow.querySelector(`.color-swatch[title="${selectedFlaskColor}"]`);
+    if (defaultSwatch) {
+        window.selectColor(defaultSwatch);
+    }
 }
 
 
@@ -508,9 +569,10 @@ window.selectColor = function(element) {
         flaskImageElement.src = flaskImages[colorName];
     }
     
-    // Re-enable the send button for this specific step
+    // *** FIX: Re-enable the send button and update its text ***
     sendBtn.disabled = false;
     sendBtn.textContent = `Confirmar ${colorName}`;
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
 // 5. Main click handler for the 'Enviar' button
@@ -519,14 +581,14 @@ sendBtn.addEventListener("click",()=>{
     const questionIndex = currentQuestion;
 
     // 1. Retrieve the text based on the input type
-    if (questionIndex === 3) {
+    if (questionIndex === 9) {
+        // *** FIX: Flask color step - Use the global variable for the answer ***
+        text = selectedFlaskColor;
+    } else if (questionIndex === 3) {
         // Phone number step
         const countryCode = document.getElementById("country-code").value;
         const number = document.getElementById("user-input").value.trim();
         text = countryCode + " " + number;
-    } else if (questionIndex === 9) {
-        // Flask color step - The input is the selected color
-        text = selectedFlaskColor;
     } else {
         // Standard text input
         const userInput = document.getElementById("user-input");
@@ -536,7 +598,7 @@ sendBtn.addEventListener("click",()=>{
 
     // 2. Validation
     if(!text) {
-        addMessage("⚠️ Por favor, escribe una respuesta.", "bot");
+        addMessage("⚠️ Por favor, introduce una respuesta válida.", "bot");
         return;
     }
     if (questionIndex === 0 && text.toUpperCase() !== 'ACEPTO') {
@@ -547,6 +609,7 @@ sendBtn.addEventListener("click",()=>{
         addMessage("⚠️ Por favor, introduce una respuesta válida y completa (mínimo 2 caracteres).", "bot");
         return;
     }
+    // Validation for phone number check
     if (questionIndex === 3 && !/^\+?\d{7,20}$/.test(text.replace(/\s/g, ''))) {
         addMessage("⚠️ Por favor, introduce un formato de teléfono válido (incluyendo código de país).", "bot");
         return;
@@ -556,16 +619,18 @@ sendBtn.addEventListener("click",()=>{
     // 3. Process and Advance
     addMessage(text,"user");
     answers.push(text);
-    // Reset inputs
+    
+    // *** FIX: Reset input area back to standard text input for the NEXT step ***
     currentInputContainer.innerHTML = `<input id="user-input" type="text" placeholder="Escribe tu respuesta y presiona Enter o Enviar...">`;
     sendBtn.textContent = "Enviar";
     sendBtn.disabled = false;
-    
+
+    // Advance to next question
     currentQuestion++;
     botAskNext();
 });
 
-// --- PERSONALIZATION LOGIC (UPDATED NARRATIVE FOR SEAMLESSNESS) ---
+// --- PERSONALIZATION LOGIC (Unchanged) ---
 function getPersonalizedNotesAndName(answers) {
     // Note: Memory step is at answers[10]
     const memory = (answers[10] || '').toLowerCase(); 
@@ -593,7 +658,7 @@ function getPersonalizedNotesAndName(answers) {
         middleNotes = "Oud ahumado, Madera de Cedro, Cuero Rústico"; 
         baseNotes = "Pachulí indonesio, Cacao, Musgo de Roble";
         manifestoTitle = "Manifesto Aventura";
-        perfumeStory = `**La Estela del Explorador.** Un tributo olfativo al valor del viaje. Su anécdota de <STRONG>'${userMemory}'</STRONG> se traduce en una fragancia audaz, donde maderas y especias se combinan para proyectar una ineludible <STRONG>${intentionDesc}</STRONG>.`;
+        perfumeStory = `**La Estela del Explorador.** Un tributo olfativo al valor del viaje. Su anécdota de <STRONG>'${userMemory}'</STRONG> se traduce en una fragancia audaz, donde maderas y especias se combinan para proyectar una ineludible <STRONG>${intentionDesc}</STRONG> y poder.`;
     } else if (memory.includes("noche") || memory.includes("misterio") || memory.includes("sensualidad")) {
         topNotes = "Grosella Negra, Azafrán, Licor de Cereza"; 
         middleNotes = "Absoluto de Tuberosa, Iris de Florencia, Café Arábica";
@@ -614,7 +679,7 @@ function getPersonalizedNotesAndName(answers) {
     return { topNotes, middleNotes, baseNotes, perfumeName, perfumeStory };
 }
 
-// 6. FINAL PERFUME RESULT (UPDATED VISUALS AND CTA)
+// 6. FINAL PERFUME RESULT (Unchanged logic, uses new CSS variables)
 function generatePerfumeDemo(){
   const firstName = answers[1] || "Cliente";
   const lastName = answers[2] || "";
@@ -643,7 +708,7 @@ function generatePerfumeDemo(){
   card.className="fragrance-card";
   
   card.innerHTML = `
-    <h3 style="margin-bottom: 5px; color: var(--color-accent-gold); font-family: 'Playfair Display', serif; font-size: 32px;">${perfumeData.nombre_perfume_completo}</h3>
+    <h3 style="margin-bottom: 5px; color: var(--color-accent); font-family: 'Playfair Display', serif; font-size: 32px;">${perfumeData.nombre_perfume_completo}</h3>
     <div class="subtitle" style="color: var(--color-text-subtle); margin-bottom: 30px;">
         Firma Olfativa | Frasco: <STRONG>${selectedFlask}</STRONG> | ${perfumeData.concentration}
     </div>
@@ -654,7 +719,7 @@ function generatePerfumeDemo(){
     </div>
 
     <div id="final-flask-preview-container" style="text-align: center; margin: 30px 0;">
-        <img src="${flaskImages[selectedFlask]}" alt="Frasco de Perfume ${selectedFlask}" style="max-width: 180px; border: 4px solid var(--color-accent-gold); border-radius: 10px;">
+        <img src="${flaskImages[selectedFlask]}" alt="Frasco de Perfume ${selectedFlask}" style="max-width: 180px; border: 4px solid var(--color-text-subtle); border-radius: 10px;">
     </div>
     
     <div class="olfactive-pyramid">
@@ -693,19 +758,19 @@ function generatePerfumeDemo(){
       const finalFirstName = answers[1] || "Cliente";
       const message = `Su esencia ha sido transferida a la <STRONG>Página de Compra Segura</STRONG>. El Atelier Privée registrará el inicio de la destilación de su Sello: ${perfumeData.codigo_olfativo}.`;
       
-      const accentGold = getComputedStyle(document.documentElement).getPropertyValue('--color-accent-gold').trim();
+      const accent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim();
       const primaryDark = getComputedStyle(document.documentElement).getPropertyValue('--color-primary-dark').trim();
       const textLight = getComputedStyle(document.documentElement).getPropertyValue('--color-text-light').trim();
 
       const dialog = document.createElement('div');
       dialog.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; justify-content: center; align-items: center;';
       dialog.innerHTML = `
-          <div style="background: ${primaryDark}; padding: 40px; border-radius: 20px; text-align: center; max-width: 450px; box-shadow: 0 15px 40px rgba(0,0,0,0.7); animation: popin 0.4s forwards; color: ${textLight}; border: 3px solid ${accentGold};">
-              <h4 style="color: ${accentGold}; font-family: 'Playfair Display', serif; font-size: 30px; margin-top: 0; letter-spacing: 1px;">Transición a Compra</h4>
+          <div style="background: ${primaryDark}; padding: 40px; border-radius: 20px; text-align: center; max-width: 450px; box-shadow: 0 15px 40px rgba(0,0,0,0.7); animation: popin 0.4s forwards; color: ${textLight}; border: 3px solid ${accent};">
+              <h4 style="color: ${accent}; font-family: 'Playfair Display', serif; font-size: 30px; margin-top: 0; letter-spacing: 1px;">Transición a Compra</h4>
               <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px;">
                 <STRONG>¡Felicidades!</STRONG> ${message}
               </p>
-              <button onclick="this.closest('div').remove()" style="background: ${accentGold}; color: var(--color-primary-dark); border: none; padding: 15px 30px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase;">Finalizar Consulta</button>
+              <button onclick="this.closest('div').remove()" style="background: ${accent}; color: var(--color-primary-dark); border: none; padding: 15px 30px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase;">Finalizar Consulta</button>
           </div>
           <style>@keyframes popin { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }</style>
       `;
